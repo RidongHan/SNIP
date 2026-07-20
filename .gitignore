@@ -1,0 +1,6 @@
+__pycache__/
+output/
+*.pth
+data/ACMv9/
+data/Citationv1/
+data/DBLPv7/
