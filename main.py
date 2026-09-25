@@ -172,7 +172,6 @@ def train(args, source_data, target_data):
                   'macro_f1: {:.6f}'.format(macro_f1),
                   'micro_f1: {:.6f}'.format(micro_f1))
 
-        # 3. 核心修改：以 Macro F1 为标准保存模型
         torch.save(model.state_dict(), args.save_path + '{}.pth'.format(epoch))
 
         if loss < min_loss:
