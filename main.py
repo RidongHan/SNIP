@@ -175,7 +175,8 @@ def train(args, source_data, target_data):
         # 3. 核心修改：以 Macro F1 为标准保存模型
         torch.save(model.state_dict(), args.save_path + '{}.pth'.format(epoch))
 
-        if macro_f1 > max_macro_f1:
+        if loss < min_loss:
+            min_loss = loss
             max_macro_f1 = macro_f1
             max_micro_f1 = micro_f1
             best_epoch = epoch  # 更新最佳轮次索引
